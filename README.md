@@ -1,4 +1,4 @@
-# Dropbox Sync Case (Capitalisation)
+# Dropbox Sync Case
 
 Use this project to synchronise the capitalisation of your folders between the cloud and local files. You can *push* the capitalisation from your local files to your cloud files, or *pull* the capitalisation from your cloud files to your local files.
 
@@ -16,6 +16,8 @@ While in theory this has been designed so that it should work on all platforms, 
 ## Requirements
 
 Make sure that you have Python 3 installed, along with the `pip` (required) and `venv` (optional) packages.
+
+You must also generate an OAuth 2 access token for your account. This is easy to do. Simply go to the [Dropbox API Explorer](https://dropbox.github.io/dropbox-api-v2-explorer/#users_get_current_account), authenticate with your Dropbox account and then click 'Get Token'.
 
 ## Usage
 
