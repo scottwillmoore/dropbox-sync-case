@@ -45,6 +45,7 @@ def os_files_and_folders(dropbox_path, target_path):
 
 
 # TODO: Handle scope_path doesn't exist and other errors.
+# TODO: Could show the progress of how many pages have been retrieved.
 def db_files_and_folders(db, scope_path):
     entries = []
 

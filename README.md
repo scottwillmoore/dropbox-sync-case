@@ -1,8 +1,8 @@
-# Dropbox Sync Case
+# Dropbox Sync Case (Capitalisation)
 
 Use this project to synchronise the capitalisation of your folders between the cloud and local files. You can *push* the capitalisation from your local files to your cloud files, or *pull* the capitalisation from your cloud files to your local files.
 
-*Why would I ever want to do that?*
+***Why would I ever want to do that?***
 
 Dropbox treats all files as case-insensitive, which means that the file `hello.txt` and `HELLO.txt` are exactly the same. When you rename a file to the same name (e.g. `hello.txt` to `HELLO.txt`), the Dropbox client will not push this change to the cloud. This means that all other devices that you sync your files onto will pull the file down as `hello.txt`, even though you've renamed your file to `HELLO.txt`. This tool aims to solve that problem. It works by identifying differences in capitalisation between your local files and cloud files and then attempts to correct them.
 
@@ -19,9 +19,29 @@ Make sure that you have Python 3 installed, along with the `pip` (required) and 
 
 ## Usage
 
-If you do not care about creating a `venv`, then simply run `pip install .`. Otherwise, create a `venv` then run `pip install .`.
+To use `dropbox-sync-case` in a virtual environment you must run the following commands.
 
-The package exposes the CLI `dropbox-sync-case` which can be controlled with the following options.
+````bash
+# Ensure you are in the directory of the script.
+cd sync-dropbox-case
+
+# Create a virutal environment.
+python -m venv venv
+
+# Enter the virutal environment.
+./venv/Scripts/activate
+
+# Install dropbox-sync-case and required packages.
+pip install .
+
+# Run dropbox-sync-case commands.
+dropbox-sync-case -h
+
+# Exit the virtual environment.
+deactivate
+````
+
+The `dropbox-sync-case` CLU can be controlled with the following options.
 
 ````
 dropbox-sync-case -h
@@ -42,14 +62,7 @@ Options:
 
 ````
 
-You should always run the tool with `-n` (perform a dry run), until you are happy that the tool will modify the correct files. Once you are ready, then remove the `-n`.
-
-````
-dropbox-sync-case -m push -d C:\Users\Scott\Dropbox -t <access_token> -n
-
-PUSH: C:\Users\Scott\Dropbox\hello.txt -> Hello.txt
-...
-````
+You should always run the tool with `--dry-run`, until you are happy that the tool will modify the correct files. Once you are ready, then remove the `--dry-run`.
 
 ## Contributions
 
