@@ -9,6 +9,8 @@ Dropbox treats all files as case-insensitive, which means that the file `hello.t
 
 ## Warning!
 
+For now, turn off all instances of Dropbox clients that are connected to your account. I have had the Dropbox client delete the directory with the old name, only to have to download all the data from this directory to put it into the directory with the new name.
+
 As always, it is very possible that bugs (or edge cases that I haven't discovered) exist in this script. I would recommend taking a backup before executing the script. In addition, you should carefully examine the output of the script with the `--dry-run` to double check that everything looks okay.
 
 While in theory this has been designed so that it should work on all platforms, so far I have only been able to test on Windows. I have been careful to ensure it should work on non-Windows platforms, but it is still very possible that bugs exist (or edge-cases that I haven't discovered). Again, I would carefully examine the ouput of the script with `--dry-run` to double check that every looks okay.
