@@ -76,3 +76,9 @@ If you see any issues and would like to fix them, feel free to create a pull req
 ## Todo
 
 Fix the many TODOs still littered throughout script.
+
+I believe the script crashes if you call the Dropbox API too many times due to rate limitting. This could be fixed by checking this error message and exponentially backing off. In addition, the script should be able to handle when the API returns an error.
+
+Moving to operations instead of repeating the same API call many, many times should also improve the reliability of the script.
+
+There also appears to be an issue, whereby Dropbox clients will resync every file in a folder after a name change. This will require further investigation. This is extremely annoying as it will redownload all the files.
